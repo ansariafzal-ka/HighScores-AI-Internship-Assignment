@@ -18,11 +18,15 @@ their proficiency using an Item Response Theory (IRT) model.
 # Clone repository
 git clone https://github.com/ansariafzal-ka/HighScores-AI-Internship-Assignment.git
 cd HighScores-AI-Internship-Assignment
+```
 
+```
 # Create virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
+```
 # Install dependencies
 pip install -r requirements.txt
 ```
