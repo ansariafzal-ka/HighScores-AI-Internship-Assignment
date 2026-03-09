@@ -199,7 +199,7 @@ def next_question(session_id: str) -> dict:
         raise CustomException(e, sys)
 
 @router.post('/end-session')
-def end_session(data: dict):
+def end_session(data: dict) -> dict:
     try:
         session_id = ObjectId(data['session_id'])
         # find the session
