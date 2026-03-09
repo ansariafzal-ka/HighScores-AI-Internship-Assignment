@@ -121,11 +121,14 @@ POST /submit-answer
 Submit answer for the current question.
 
 Request Body:
+
+```json
 {
-"session_id": "string",
-"question_id": "string",
-"selected_answer": "string"
+  "session_id": "string",
+  "question_id": "string",
+  "selected_answer": "string"
 }
+```
 
 ### 3. Get Next Question
 
@@ -138,8 +141,11 @@ Returns the next question based on the student's updated ability score.
 POST /end-session
 
 Request Body:
+
+```json
 {
-"session_id": "string"
+  "session_id": "string"
 }
+```
 
 After doing 5 questions, the user can call this endpoint and generate a personalized study plan using gpt-3.5-turbo.
