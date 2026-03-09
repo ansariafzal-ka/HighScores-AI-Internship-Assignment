@@ -55,6 +55,25 @@ uvicorn app:app --reload
 
 You can test the app using `http://localhost:8000/docs`
 
+### Testing the API
+
+To simulate a full adaptive test session using the interactive Swagger UI:
+
+1. Call **POST /start-test**
+   - This will create a new session and return the first question along with a `session_id`.
+
+2. Call **POST /submit-answer**
+   - Submit the answer for the current question using the `session_id` and `question_id`.
+
+3. Call **GET /next-question/{session_id}**
+   - This will return the next question selected based on the updated ability score.
+
+4. Repeat steps **2 → 3** until **5 questions are answered**.
+
+5. After completing 5 questions, call **POST /end-session**
+   - Provide the `session_id`.
+   - The system will generate a **personalized study plan using GPT-3.5-turbo** based on the student's performance.
+
 ## Adaptive Testing Logic
 
 The system implements a simplified 1D Item Response Theory (IRT) model.
