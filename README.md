@@ -124,7 +124,7 @@ Request Body:
 {
 "session_id": "string",
 "question_id": "string",
-"selected_option": "string"
+"selected_answer": "string"
 }
 
 ### 3. Get Next Question
@@ -137,4 +137,9 @@ Returns the next question based on the student's updated ability score.
 
 POST /end-session
 
-Ends the session and generates a personalized study plan using gpt-3.5-turbo.
+Request Body:
+{
+"session_id": "string"
+}
+
+After doing 5 questions, the user can call this endpoint and generate a personalized study plan using gpt-3.5-turbo.

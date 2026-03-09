@@ -128,7 +128,7 @@ def submit_answer(data: dict) -> dict:
         }
 
     except Exception as e:
-        raise CustomException(e)
+        raise CustomException(e, sys)
     
 @router.get('/next-question/{session_id}')
 def next_question(session_id: str) -> dict:
@@ -148,8 +148,8 @@ def next_question(session_id: str) -> dict:
         # get the number of questions done by the user
         num_questions = session['num_questions']
 
-        # stop the test after 10 questions
-        if num_questions >= 10:
+        # stop the test after 5 questions
+        if num_questions >= 5:
             return {
                 'message': 'Test completed.',
                 'final ability score': session['ability_score']
